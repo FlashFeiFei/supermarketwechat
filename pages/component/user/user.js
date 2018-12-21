@@ -6,9 +6,9 @@ Page({
    */
   data: {
     //微信用户头像
-    thumb: '/image/c2.png',
+    thumb: '',
     //微信昵称
-    nickname: '梁宇',
+    nickname: '',
     orders: [],
     hasAddress: false,
     address: {}
