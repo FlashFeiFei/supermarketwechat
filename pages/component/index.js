@@ -71,10 +71,7 @@ Page({
   onShareAppMessage: function () {
 
   },
-  clickMe:function(){
-    console.log("token展示")
-    console.log(getApp().globalData.supermarket_token)
-    console.log("用户信息")
-    console.log(getApp().globalData.userInfo)
+  onGotUserInfo:function(e){
+    console.log(e)
   }
 })
