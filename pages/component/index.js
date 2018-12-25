@@ -13,7 +13,7 @@ Page({
     indicatorDots: false,
     autoplay: false,
     interval: 3000,
-    duration: 800,
+    duration: 800
   },
 
   /**
@@ -34,7 +34,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**
@@ -70,5 +70,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  clickMe:function(){
+    console.log("token展示")
+    console.log(getApp().globalData.supermarket_token)
+    console.log("用户信息")
+    console.log(getApp().globalData.userInfo)
   }
 })
