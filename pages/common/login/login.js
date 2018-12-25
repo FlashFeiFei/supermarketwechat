@@ -45,13 +45,6 @@ function LoginIsExpire() {
   //是否过期
   var expire = true
 
-  //获取token
-  var token = getSupermarketUserToken()
-  if (token == "") {
-    //没有登录
-    return expire
-  }
-
   //检查小程序前端的session是否过期
   wx.checkSession({
     success() {
@@ -62,6 +55,14 @@ function LoginIsExpire() {
       // session_key 已经失效，需要重新执行登录流程
     }
   })
+
+
+  //获取token
+  var token = getSupermarketUserToken()
+  if (token == "") {
+    //没有登录
+    return expire
+  }
 
   console.log(expire)
   return expire
