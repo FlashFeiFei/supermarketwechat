@@ -1,19 +1,19 @@
 @import '../../common/common.wxss';
 
-.form-box {
+.body-view {
   padding-left: 30rpx;
 }
 
-.form-box input {
+.body-view view {
   height: 90rpx;
   border-bottom: 1rpx solid #ededed;
   color: #999;
 }
 
-.form-box .input-placeholder {
+.body-view .input-placeholder {
   color: #aaa;
 }
 
-.form-box button {
+.body-view button {
   margin: 30rpx 30rpx 0 0;
 }

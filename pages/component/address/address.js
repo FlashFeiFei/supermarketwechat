@@ -5,11 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    address: {
-      name: '',
-      phone: '',
-      detail: ''
-    }
+    addressInfo:null
   },
 
   /**
@@ -75,26 +71,18 @@ Page({
   onShareAppMessage: function() {
 
   },
-
-  /**
-   * 添加地址
-   */
-  formSubmit: function(e) {
-    const value = e.detail.value;
-    if (value.name && value.phone && value.detail) {
-      wx.setStorage({
-        key: 'address',
-        data: value,
-        success() {
-          wx.navigateBack();
-        }
-      })
-    } else {
-      wx.showModal({
-        title: '提示',
-        content: '请填写完整资料',
-        showCancel: false
-      })
-    }
+  // 收获地址
+  chooseAddress() {
+    wx.chooseAddress({
+      success: (res) => {
+        console.log(res)
+        this.setData({
+          addressInfo: res
+        })
+      },
+      fail: function(err) {
+        console.log(err)
+      }
+    })
   }
 })
