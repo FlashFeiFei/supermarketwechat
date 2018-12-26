@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    addressInfo:null
+    addressInfo: null
   },
 
   /**
@@ -63,6 +63,7 @@ Page({
   onShareAppMessage: function() {
 
   },
+
   // 收获地址
   chooseAddress() {
     var self = this;
@@ -73,9 +74,7 @@ Page({
           addressInfo: res
         })
       },
-      fail: function(err) {
-        console.log(err)
-      }
+      fail: function(err) {}
     })
   }
 })
