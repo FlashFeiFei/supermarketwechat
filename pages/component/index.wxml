@@ -8,10 +8,6 @@
     </block>
   </swiper>
 
-  <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
-  获取用户信息
-</button>
-
   <!--搜索框-->
   <view class="search">
     <navigator url="search/search">

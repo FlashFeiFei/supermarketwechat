@@ -12,15 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var self = this;
-    wx.getStorage({
-      key: 'address',
-      success: function(res) {
-        self.setData({
-          address: res.data
-        })
-      }
-    })
+
   },
 
   /**
@@ -73,10 +65,11 @@ Page({
   },
   // 收获地址
   chooseAddress() {
+    var self = this;
     wx.chooseAddress({
       success: (res) => {
         console.log(res)
-        this.setData({
+        self.setData({
           addressInfo: res
         })
       },

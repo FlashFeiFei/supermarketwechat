@@ -70,10 +70,6 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  onGotUserInfo:function(e){
-    console.log(e)
-    console.log("-----------------华丽丽的分割线-------------------")
-    console.log(getApp().globalData.supermarket_token)
   }
+  
 })
