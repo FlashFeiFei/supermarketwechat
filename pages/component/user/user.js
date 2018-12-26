@@ -9,9 +9,7 @@ Page({
     thumb: '',
     //微信昵称
     nickname: '',
-    orders: [],
-    hasAddress: false,
-    address: {}
+    orders: []
   },
 
   /**
