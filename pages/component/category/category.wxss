@@ -36,6 +36,7 @@ page,.main{
 }
 .cate-box{
     height: 100%;
+    overflow: auto;
     padding:40rpx;
     box-sizing: border-box;
 }
@@ -71,7 +72,6 @@ page,.main{
     height: 4rpx;
     background: #AB956D;
 }
-
 .product-list{
     display: inline-block;
     width: 160rpx;

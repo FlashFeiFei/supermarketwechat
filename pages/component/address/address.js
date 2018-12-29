@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    addressInfo: null
+    addressInfo: null,
+    refuse: false
   },
 
   /**
@@ -67,14 +68,50 @@ Page({
   // 收获地址
   chooseAddress() {
     var self = this;
-    wx.chooseAddress({
-      success: (res) => {
-        console.log(res)
-        self.setData({
-          addressInfo: res
-        })
-      },
-      fail: function(err) {}
+    // 查看用户是否授权地址
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting['scope.address']) {
+          wx.chooseAddress({
+            success: (res) => {
+              console.log(res)
+              self.setData({
+                addressInfo: res,
+                refuse: false
+              })
+            },
+            fail: function(err) {
+              self.setData({
+                refuse: true
+              })
+            }
+          })
+        } else {
+          console.log(self.data.refuse)
+          if (self.data.refuse) {
+            wx.openSetting({
+              success: (res) => {
+                console.log(res)
+              }
+            })
+          } else {
+            wx.chooseAddress({
+              success: (res) => {
+                console.log(res)
+                self.setData({
+                  addressInfo: res,
+                  refuse: false
+                })
+              },
+              fail: function(err) {
+                self.setData({
+                  refuse: true
+                })
+              }
+            })
+          }
+        }
+      }
     })
   }
 })
