@@ -8,7 +8,7 @@ App({
     SUPERMAKET_LOGIN.LoginSupermarket()
   },
   globalData: {
-    userInfo: '',
+    userInfo: null,
     //登录到supermarket的token
     supermarket_token:""
   }
